@@ -47,7 +47,7 @@ public class Generator {
         StrategyConfig strategyConfig = new StrategyConfig()
                 .setCapitalMode(true)//首字母大写
                 .setNaming(NamingStrategy.underline_to_camel)//下划线转换成驼峰命名
-                .setInclude("edu_teacher")//对哪些表进行自动生成
+                .setInclude("edu_subject")//对哪些表进行自动生成
                 .setColumnNaming(NamingStrategy.underline_to_camel)
                 .setEntityLombokModel(true)
                 .setRestControllerStyle(true)
@@ -55,7 +55,7 @@ public class Generator {
 
         //包名策略配置
         PackageConfig packageConfig = new PackageConfig()
-                .setParent("com.xcw")
+                .setParent("com.xcw.eduservice")
                 .setController("controller")
                 .setEntity("bean")
                 .setMapper("mapper")

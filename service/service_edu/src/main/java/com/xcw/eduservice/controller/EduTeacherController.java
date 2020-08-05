@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2020-08-02
  */
 @RestController
-@RequestMapping("/user-service/teacher")
+@RequestMapping("/edu-service/teacher")
 @Api(tags = "讲师管理")
 @CrossOrigin
 public class EduTeacherController {

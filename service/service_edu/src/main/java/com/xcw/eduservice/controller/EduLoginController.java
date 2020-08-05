@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user-service/user")
+@RequestMapping("/edu-service/user")
 @CrossOrigin
 @ComponentScan(basePackages = "com.xcw")
 public class EduLoginController {
