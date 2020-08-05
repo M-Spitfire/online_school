@@ -7,6 +7,7 @@ import com.xcw.EduApplication;
 import com.xcw.bean.EduTeacher;
 import com.xcw.bean.vo.TeacherQuery;
 import com.xcw.service.EduTeacherService;
+import com.xcw.servicebase.exception.MyException;
 import com.xcw.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,6 +32,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/teacher")
 @Api(tags = "讲师管理")
+@CrossOrigin
 public class EduTeacherController {
 
     private EduTeacherService teacherService;
@@ -75,7 +77,7 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(name))wrapper.like("name", name);
         if(!StringUtils.isEmpty(level))wrapper.eq("level", level);
         if(!StringUtils.isEmpty(start))wrapper.ge("gmt_create", start);
-        if(!StringUtils.isEmpty(end))wrapper.le("gmt_modified", end);
+        if(!StringUtils.isEmpty(end))wrapper.le("gmt_create", end);
 
         teacherService.page(page, wrapper);
         return R.ok().data("total", page.getTotal()).data("teacherConditionPage", page.getRecords());
