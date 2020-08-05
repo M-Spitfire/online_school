@@ -1,4 +1,4 @@
-package com.xcw.bean;
+package com.xcw.eduservice.bean;
 
 import com.baomidou.mybatisplus.annotation.*;
 

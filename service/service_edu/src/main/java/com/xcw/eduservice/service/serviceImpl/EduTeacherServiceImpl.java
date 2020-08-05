@@ -1,8 +1,8 @@
-package com.xcw.service.serviceImpl;
+package com.xcw.eduservice.service.serviceImpl;
 
-import com.xcw.bean.EduTeacher;
-import com.xcw.mapper.EduTeacherMapper;
-import com.xcw.service.EduTeacherService;
+import com.xcw.eduservice.bean.EduTeacher;
+import com.xcw.eduservice.mapper.EduTeacherMapper;
+import com.xcw.eduservice.service.EduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

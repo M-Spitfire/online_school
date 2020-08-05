@@ -1,8 +1,7 @@
-package com.xcw.service;
+package com.xcw.eduservice.service;
 
-import com.xcw.bean.EduTeacher;
+import com.xcw.eduservice.bean.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.stereotype.Component;
 
 /**
  * <p>

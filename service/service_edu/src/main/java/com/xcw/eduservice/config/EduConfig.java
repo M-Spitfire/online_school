@@ -1,4 +1,4 @@
-package com.xcw.config;
+package com.xcw.eduservice.config;
 
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.xcw.mapper")
+@MapperScan("com/xcw/eduservice/mapper")
 public class EduConfig {
     @Bean
     public ISqlInjector sqlInjector(){

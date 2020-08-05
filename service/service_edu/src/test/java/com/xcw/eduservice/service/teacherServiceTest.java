@@ -1,10 +1,8 @@
-package com.xcw.service;
+package com.xcw.eduservice.service;
 
-import com.xcw.EduApplication;
-import com.xcw.service.serviceImpl.EduTeacherServiceImpl;
+import com.xcw.eduservice.EduApplication;
 import com.xcw.utils.ResultCode;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = EduApplication.class)

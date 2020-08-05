@@ -1,6 +1,6 @@
-package com.xcw.mapper;
+package com.xcw.eduservice.mapper;
 
-import com.xcw.bean.EduTeacher;
+import com.xcw.eduservice.bean.EduTeacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

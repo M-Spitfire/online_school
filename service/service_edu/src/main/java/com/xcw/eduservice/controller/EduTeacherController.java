@@ -1,25 +1,18 @@
-package com.xcw.controller;
+package com.xcw.eduservice.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xcw.EduApplication;
-import com.xcw.bean.EduTeacher;
-import com.xcw.bean.vo.TeacherQuery;
-import com.xcw.service.EduTeacherService;
-import com.xcw.servicebase.exception.MyException;
+import com.xcw.eduservice.bean.EduTeacher;
+import com.xcw.eduservice.bean.vo.TeacherQuery;
+import com.xcw.eduservice.service.EduTeacherService;
 import com.xcw.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
@@ -30,7 +23,7 @@ import java.util.Map;
  * @since 2020-08-02
  */
 @RestController
-@RequestMapping("/teacher")
+@RequestMapping("/user-service/teacher")
 @Api(tags = "讲师管理")
 @CrossOrigin
 public class EduTeacherController {

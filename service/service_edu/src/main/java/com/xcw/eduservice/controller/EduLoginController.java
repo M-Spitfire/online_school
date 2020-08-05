@@ -1,11 +1,13 @@
-package com.xcw.controller;
+package com.xcw.eduservice.controller;
 
 import com.xcw.utils.R;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user-service/user")
 @CrossOrigin
+@ComponentScan(basePackages = "com.xcw")
 public class EduLoginController {
     @PostMapping("/login")
     public R login(){
