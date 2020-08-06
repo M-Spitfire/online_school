@@ -2,7 +2,10 @@ package com.xcw.eduservice.service;
 
 import com.xcw.eduservice.bean.EduSubject;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xcw.eduservice.bean.subject.Subject;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface EduSubjectService extends IService<EduSubject> {
 
     void addByFile(MultipartFile file, EduSubjectService subjectService);
+
+    List<Subject> getAllSubject(String parentId);
 }

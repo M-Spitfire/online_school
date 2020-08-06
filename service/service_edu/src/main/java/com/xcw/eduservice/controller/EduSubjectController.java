@@ -1,14 +1,17 @@
 package com.xcw.eduservice.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.xcw.eduservice.bean.EduSubject;
+import com.xcw.eduservice.bean.subject.Subject;
 import com.xcw.eduservice.service.EduSubjectService;
 import com.xcw.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -19,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @since 2020-08-05
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/edu-service/subject")
 public class EduSubjectController {
     private EduSubjectService subjectService;
@@ -30,6 +34,13 @@ public class EduSubjectController {
     public R addSubjects(MultipartFile file){
         subjectService.addByFile(file, subjectService);
         return R.ok();
+    }
+
+    @GetMapping("/get-all-subject")
+    public R getAllSubject(){
+        List<Subject> list = subjectService.getAllSubject("0");
+        System.out.println(list);
+        return R.ok().data("subjects", list);
     }
 }
 
