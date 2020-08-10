@@ -39,7 +39,6 @@ public class EduSubjectController {
     @GetMapping("/get-all-subject")
     public R getAllSubject(){
         List<Subject> list = subjectService.getAllSubject("0");
-        System.out.println(list);
         return R.ok().data("subjects", list);
     }
 }

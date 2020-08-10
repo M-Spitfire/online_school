@@ -33,7 +33,7 @@ public class OssServiceImpl implements OssService {
             //上传,参数:(目标仓库的名字, 给文件起一个名字, 流)
             //如果文件名的格式类似与文件的磁盘路径,比如2020/01/01/01.jpg, 那么会自动创建三级目录2020/01/01,将01.jpg存放在里面
             //利用这点我们可以根据上传的日期来将图片分类
-            fileName = new DateTime().toString("yyyy/MM/dd") + fileName;
+            fileName = new DateTime().toString("yyyy/MM/dd") + "/" + fileName;
             ossClient.putObject(bucketName, fileName, is);
 
             //关闭oss
