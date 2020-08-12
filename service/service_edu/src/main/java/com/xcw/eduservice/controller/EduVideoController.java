@@ -2,9 +2,12 @@ package com.xcw.eduservice.controller;
 
 
 import com.xcw.eduservice.bean.EduVideo;
+import com.xcw.eduservice.client.VodClient;
 import com.xcw.eduservice.service.EduVideoService;
+import com.xcw.servicebase.exception.MyException;
 import com.xcw.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -21,9 +24,13 @@ import org.springframework.web.bind.annotation.*;
 public class EduVideoController {
 
     private EduVideoService videoService;
+    private VodClient vodClient;
 
     @Autowired
-    public EduVideoController(EduVideoService videoService){this.videoService = videoService;}
+    public EduVideoController(EduVideoService videoService, VodClient vodClient){
+        this.videoService = videoService;
+        this.vodClient = vodClient;
+    }
 
     //添加或修改
     @PostMapping("/save")
@@ -35,6 +42,17 @@ public class EduVideoController {
     //删除
     @GetMapping("/delete/{id}")
     public R deleteById(@PathVariable String id){
+        //获取小节下的视频的id
+        String videoSourceId = videoService.getById(id).getVideoSourceId();
+        //通过feign调用其他服务的接口删除阿里云上的视频
+        if(!StringUtils.isEmpty(videoSourceId)){
+            R returnVal = vodClient.deleteVideo(videoSourceId);
+            if(returnVal.getCode() != 20000){
+                throw new MyException(20001, "熔断");
+            }
+        }
+
+        //删除小节
         videoService.removeById(id);
         return R.ok();
     }
