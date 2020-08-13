@@ -2,15 +2,18 @@ package com.xcw.utils;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class R {
+public class R implements Serializable {
     private Boolean isSuccess;
     private String message;
     private Integer code;
     private Map<String, Object> data;
+
+    public R(){}
 
     public R(Boolean isSuccess, String message, Integer code) {
         this.isSuccess = isSuccess;
